@@ -1,11 +1,9 @@
 import { FC } from 'react';
 
-const Header: FC = () => {
+export const Header: FC = () => {
   return (
-    <header className="bg-blue-500 text-white p-4">
+    <header className="p-4 text-white bg-blue-500">
       <h1 className="text-xl font-bold">Назва сайту</h1>
     </header>
   );
 };
-
-export default Header;
