@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "//github.com/Andrew-Skoryk/re-landing/static/css/main.5f18b958.css",
+    "main.js": "//github.com/Andrew-Skoryk/re-landing/static/js/main.873990a2.js",
+    "static/js/787.052bb68f.chunk.js": "//github.com/Andrew-Skoryk/re-landing/static/js/787.052bb68f.chunk.js",
+    "index.html": "//github.com/Andrew-Skoryk/re-landing/index.html",
+    "main.5f18b958.css.map": "//github.com/Andrew-Skoryk/re-landing/static/css/main.5f18b958.css.map",
+    "main.873990a2.js.map": "//github.com/Andrew-Skoryk/re-landing/static/js/main.873990a2.js.map",
+    "787.052bb68f.chunk.js.map": "//github.com/Andrew-Skoryk/re-landing/static/js/787.052bb68f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f18b958.css",
+    "static/js/main.873990a2.js"
+  ]
+}
