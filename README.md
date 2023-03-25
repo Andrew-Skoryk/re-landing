@@ -2,7 +2,7 @@
 
 This project is a simple test project created for a job application. It demonstrates my skills in using TypeScript, React, and Tailwind CSS to build a clean and responsive web application. The main goal of this project is to showcase my understanding of modern web development practices and tools.
 
-[DEMO LINK](https://github.com/Andrew-Skoryk/re-landing)
+[DEMO LINK](https://Andrew-Skoryk.github.io//re-landing)
 
 ## Technologies
 
