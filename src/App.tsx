@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import MainSection from "./components/MainSection";
 
 function App() {
   const topRef = useRef<HTMLDivElement>(null);
@@ -13,6 +14,7 @@ function App() {
       <div ref={topRef}>
         <Header />
       </div>
+      <MainSection />
       <Footer onLogoClick={scrollToTop} />
     </div>
   );

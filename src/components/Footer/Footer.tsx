@@ -4,7 +4,7 @@ type FooterProps = {
   onLogoClick: () => void;
 };
 
-export const Footer: FC<FooterProps> = ({ onLogoClick }) => {
+const Footer: FC<FooterProps> = ({ onLogoClick }) => {
   return (
     <footer className="font-bold bg-yellow-300 text-slate-700">
       <div className="flex items-center justify-between px-8 pt-6 pb-8 mx-auto max-w-screen-2xl">
@@ -50,3 +50,5 @@ export const Footer: FC<FooterProps> = ({ onLogoClick }) => {
     </footer>
   );
 };
+
+export default Footer;
