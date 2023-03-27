@@ -9,8 +9,8 @@ const SubscribeEmail: FC = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center font-bold">
-      <h3 className="tracking-wide text-slate-50 text-ellipsis">
+    <section className="flex flex-col items-center justify-center font-bold lg:pt-52 pt-28 md:pt-32 relative before:absolute before:inset-x-1/2 before:w-10/12 before:h-[2px] before:bg-zinc-600 before:-translate-x-1/2 before:top-0 mb-4 before:rounded-full">
+      <h3 className="absolute tracking-wide text-slate-50 text-ellipsis lg:text-xl top-28 md:top-34 lg:top-56">
         Subscribe to our news letter
       </h3>
       <form
@@ -24,7 +24,7 @@ const SubscribeEmail: FC = () => {
           value={email}
           className="flex-grow w-2/3 px-6 py-2 outline-none bg-stone-50 text-slate-800 rounded-3xl placeholder:text-slate-800"
         />
-        <button className="px-10 py-2 bg-yellow-300 text-slate-800 rounded-3xl w-min">
+        <button className="px-10 py-2 bg-yellow-300 text-slate-800 rounded-3xl w-min hover:bg-yellow-400 active:bg-yellow-500">
           Subscribe
         </button>
       </form>
