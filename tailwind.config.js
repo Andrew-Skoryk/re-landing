@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         header: "url('./assets/header-background.jpg')",
+        subscribeEmail: "url('./assets/Subcribe-backgroud.svg')",
       },
     },
   },
