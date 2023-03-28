@@ -1,19 +1,29 @@
 {
   "files": {
-    "main.css": "./static/css/main.a81e4d45.css",
-    "main.js": "./static/js/main.128532c5.js",
+    "main.css": "./static/css/main.ed5ba5b7.css",
+    "main.js": "./static/js/main.151bc379.js",
     "static/js/787.052bb68f.chunk.js": "./static/js/787.052bb68f.chunk.js",
+    "static/media/mountain-3.jpg": "./static/media/mountain-3.de0d864cb3509b038c34.jpg",
     "static/media/header-background.jpg": "./static/media/header-background.10251716c2efddfd8654.jpg",
     "static/media/Above-the-sea.jpg": "./static/media/Above-the-sea.5a3313f8876d8de5c5a0.jpg",
+    "static/media/outdoors-peru.jpg": "./static/media/outdoors-peru.4fed6bc05b57c0a2f0f9.jpg",
+    "static/media/outdoors-canada.jpg": "./static/media/outdoors-canada.9612656618ec50be3133.jpg",
+    "static/media/mountain-2.jpg": "./static/media/mountain-2.246290a8f5e410b6df2e.jpg",
+    "static/media/outdoors-usa.jpg": "./static/media/outdoors-usa.7214017985b1a8fdfc46.jpg",
     "static/media/mauntainCollections-background.jpg": "./static/media/mauntainCollections-background.fc56df435112ad6ab9ea.jpg",
+    "static/media/mountain-1.jpg": "./static/media/mountain-1.adf8a35d2787bb60e294.jpg",
     "static/media/Subcribe-backgroud.svg": "./static/media/Subcribe-backgroud.551fc7612fe504b17645.svg",
+    "static/media/slick.svg": "./static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "./static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "./static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "./static/media/slick.295183786cd8a1389865.woff",
     "index.html": "./index.html",
-    "main.a81e4d45.css.map": "./static/css/main.a81e4d45.css.map",
-    "main.128532c5.js.map": "./static/js/main.128532c5.js.map",
+    "main.ed5ba5b7.css.map": "./static/css/main.ed5ba5b7.css.map",
+    "main.151bc379.js.map": "./static/js/main.151bc379.js.map",
     "787.052bb68f.chunk.js.map": "./static/js/787.052bb68f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a81e4d45.css",
-    "static/js/main.128532c5.js"
+    "static/css/main.ed5ba5b7.css",
+    "static/js/main.151bc379.js"
   ]
 }
