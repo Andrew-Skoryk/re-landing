@@ -6,7 +6,11 @@ const AboveTheSea: FC = () => {
   return (
     <section className="flex gap-6 m-auto text-gray-300 md:gap-16 max-w-screen-2xl lg:gap-28">
       <div className="relative overflow-hidden md:w-2/5">
-        <img src={AboutTHeSea} alt="Above the Sea" className="absolute top-0" />
+        <img
+          src={AboutTHeSea}
+          alt="Above the Sea"
+          className="object-cover w-full h-auto aspect-square"
+        />
       </div>
 
       <article className="space-y-8 md:space-y-12 lg:max-w-md">
@@ -16,7 +20,7 @@ const AboveTheSea: FC = () => {
           The Sea
         </h2>
         <q className="block italic">
-          &nbsp;Eros reque munere ul quo, commado ullamcorper ad cam. His
+          &nbsp; Eros reque munere ul quo, commado ullamcorper ad cam. His
           aeterno scriplorem ci, sea ut epicuri lincidunt. &nbsp;
         </q>
 

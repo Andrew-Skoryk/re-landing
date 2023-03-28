@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col text-slate-50">
+    <div className="flex flex-col font-sans text-slate-50">
       <div ref={topRef}>
         <Header />
       </div>
