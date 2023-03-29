@@ -9,7 +9,7 @@ const SubscribeEmail: FC = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center font-bold lg:pt-52 pt-28 md:pt-32 relative before:absolute before:right-0 before:w-10/12 before:h-[2px] before:bg-zinc-500 before:top-0 mb-4 before:rounded-full lg:before:mr-32 before:mr-5 md:before:mr-16">
+    <section className="flex flex-col items-center justify-center font-bold lg:pt-52 pt-28 md:pt-32 relative before:absolute before:right-0 before:w-10/12 before:h-[2px] before:bg-zinc-500 before:top-0 mb-4 before:rounded-full lg:before:mr-32 before:mr-5 md:before:mr-16 max-w-screen-2xl m-auto">
       <h3 className="absolute tracking-wide text-slate-50 text-ellipsis lg:text-xl top-28 md:top-34 lg:top-56">
         Subscribe to our news letter
       </h3>

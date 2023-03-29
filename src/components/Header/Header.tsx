@@ -63,7 +63,7 @@ const Header: FC = () => {
         </nav>
 
         <div className="absolute lg:top-1/4 lg:left-1/4 md:left-1/3 md:top-1/3 top-1/3 left-6">
-          <h1 className="mb-12 text-5xl font-bold tracking-wide">
+          <h1 className="mb-12 text-6xl font-bold tracking-wide">
             The Walchen
             <br />
             Lake
