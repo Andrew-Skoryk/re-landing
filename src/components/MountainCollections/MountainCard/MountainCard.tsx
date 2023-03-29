@@ -20,7 +20,7 @@ const MountainCard: FC<Props> = ({ title, country, isLast, img }) => {
         }
       )}
     >
-      <div className="text-center xl-auto xmax-w-xl lg:text-start lg:m-0 lg:max-w-sm xl:max-w-2xl">
+      <div className="max-w-xl m-auto text-center lg:text-start lg:m-0 lg:max-w-sm xl:max-w-xl">
         <h3 className="mb-1 text-xl font-bold md:text-3xl">{title}</h3>
 
         <h4 className="mb-8 text-xl font-bold opacity-50">{country} Country</h4>
@@ -45,7 +45,7 @@ const MountainCard: FC<Props> = ({ title, country, isLast, img }) => {
       <div className="self-center w-full mt-10 md:w-1/2 lg:w-96 lg:mt-0">
         <img
           src={img}
-          alt={"Image of  " + title}
+          alt={"Image of " + title}
           className="object-cover w-full h-auto aspect-square"
         />
       </div>
