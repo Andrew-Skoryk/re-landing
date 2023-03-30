@@ -11,11 +11,12 @@ const Header: FC = () => {
   };
 
   return (
-    <header className="relative min-h-screen bg-center bg-cover bg-header">
+    <header className="relative h-screen bg-center bg-cover bg-header lg:pr-32">
+      <div className="absolute bottom-0 right-0 z-20 w-full h-1/4 bg-gradienToBg" />
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative z-10 flex flex-col h-screen">
         <div className="flex justify-between pr-2 lg:pr-20 md:pr-12">
-          <div className="py-3 bg-yellow-300 w-36 md:p-6 md:w-72 md:pl-8">
+          <div className="w-1/3 py-3 bg-yellow-300 md:p-6 md:w-72 md:pl-12 lg:w-96">
             <a
               href="/"
               className="px-3 py-2 text-2xl font-bold transition-colors duration-300 text-slate-700 hover:text-zinc-900"
@@ -45,7 +46,7 @@ const Header: FC = () => {
 
         <nav
           className={cn(
-            "relative px-2 py-8 md:flex-grow md:pt-12 md:px-9 md:w-max lg:px-12 md:block",
+            "relative px-2 py-8 md:flex-grow md:pt-12 md:px-9 md:w-max lg:px-16 md:block",
             {
               hidden: !isMenuOpen,
               block: isMenuOpen,
@@ -62,14 +63,14 @@ const Header: FC = () => {
           </ul>
         </nav>
 
-        <div className="absolute lg:top-1/4 lg:left-1/4 md:left-1/3 md:top-1/3 top-1/3 left-6">
-          <h1 className="mb-12 text-6xl font-bold tracking-wide">
+        <div className="absolute z-30 space-y-10 lg:top-1/5 md:left-1/3 md:top-1/3 top-1/3 left-3">
+          <h1 className="text-6xl font-bold tracking-wide">
             The Walchen
             <br />
             Lake
           </h1>
 
-          <p className="mb-12 text-sm font-semibold md:text-base">
+          <p className="text-sm font-semibold md:text-base">
             One of the deepest and largest alpine lakes in Germany
             <br />
             and one the best outdoors place

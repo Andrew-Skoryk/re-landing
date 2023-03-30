@@ -6,7 +6,7 @@ type FooterProps = {
 
 const Footer: FC<FooterProps> = ({ onLogoClick }) => {
   return (
-    <footer className="px-5 pt-6 pb-8 font-bold bg-yellow-300 text-slate-700 lg:px-32 md:px-16">
+    <footer className="px-5 pt-6 pb-8 font-bold bg-yellow-300 text-slate-700 xl:px-32 md:px-16">
       <div className="flex items-center justify-between mx-auto max-w-screen-2xl">
         <a
           className="text-2xl transition-colors duration-300 cursor-pointer hover:text-zinc-900"

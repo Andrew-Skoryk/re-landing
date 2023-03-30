@@ -12,11 +12,11 @@ const MountainCollectionsContent = [
 
 const MountainCollections: FC = () => {
   return (
-    <section className="relative px-5 pt-12 lg:pr-32 lg:pl-64 md:px-16">
+    <section className="relative px-5 pt-12 xl:pr-32 xl:pl-64 md:px-16">
       <div className="absolute inset-0 w-full bg-bottom bg-cover bg-mountainCollections h-2/3" />
       <div className="absolute top-0 right-0 w-full h-1/6 bg-gradienToTransparent" />
       <div className="absolute right-0 w-full bottom-1/3 h-1/6 bg-gradienToBg" />
-      <div className="relative mx-auto recontainer md:text-center">
+      <div className="relative mx-auto max-w-screen-2xl md:text-center">
         <h2 className="mb-10 text-4xl font-bold tracking-wide text-center md:text-6xl lg:text-start">
           Mountain Collections
         </h2>

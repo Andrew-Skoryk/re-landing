@@ -6,7 +6,7 @@ import SubscribeEmail from "../SubscribeEmail";
 
 const MainSection: FC = () => {
   return (
-    <main className="space-y-12 bg-stone-800">
+    <main className="space-y-24 bg-stone-800">
       <OutdoorsEdition />
       <AboveTheSea />
       <MountainCollections />
