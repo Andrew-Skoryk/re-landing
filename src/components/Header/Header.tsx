@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import BtnReadMore from "../BtnReadMore";
 import NavLink from "./NavLink";
 import cn from "classnames";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,29 +38,32 @@ const Header: FC = () => {
           </div>
         </div>
 
-        <button
-          className="flex items-center p-4 text-center bg-black opacity-50 md:hidden"
-          onClick={toggleMenu}
-        >
-          Menu
-        </button>
+        <nav className="relative flex flex-wrap py-3 md:flex-grow md:pt-12 md:px-9 md:w-max lg:px-16">
+          <div className="absolute inset-0 opacity-50 bg-stone-950" />
 
-        <nav
-          className={cn(
-            "relative px-2 py-8 md:flex-grow md:pt-12 md:px-9 md:w-max lg:px-16 md:block",
-            {
-              hidden: !isMenuOpen,
-              block: isMenuOpen,
-            }
-          )}
-        >
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <ul className="flex space-x-2 text-gray-400 md:space-y-8 md:flex-col md:space-x-0">
+          <button
+            className="z-50 flex items-center self-start flex-grow pl-2 text-center md:hidden"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+
+          <ul
+            className={cn(
+              "flex text-gray-400 md:space-y-8 md:flex-col md:block",
+              {
+                hidden: !isMenuOpen,
+                block: isMenuOpen,
+                "grid grid-cols-2 grid-rows-2 gap-4 md:flex mx-12": isMenuOpen,
+              }
+            )}
+          >
             <NavLink>Home</NavLink>
             <NavLink>Recommendation</NavLink>
             <NavLink>Explore</NavLink>
             <NavLink>Help</NavLink>
             <NavLink>About Us</NavLink>
+            {}
           </ul>
         </nav>
 
