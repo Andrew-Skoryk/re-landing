@@ -5,7 +5,7 @@ import AboutTHeSea from "../../assets/Above-the-sea.jpg";
 const AboveTheSea: FC = () => {
   return (
     <section className="flex flex-col items-center gap-8 px-5 m-auto text-gray-300 md:gap-16 max-w-screen-2xl xl:gap-36 lg:flex-row md:px-18 lg:items-start md:px-16 lg:px-0 lg:pr-32">
-      <div className="relative overflow-hidden lg:w-11/12 xl:w-1/2 lg:pt-5 xl:pt-0">
+      <div className="relative overflow-hidden cursor-pointer lg:w-11/12 xl:w-1/2 lg:pt-5 xl:pt-0">
         <img
           src={AboutTHeSea}
           alt="Above the Sea"

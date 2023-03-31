@@ -1,9 +1,9 @@
-import { FC, useRef, useState } from "react";
+import { FC, useMemo, useRef, useState } from "react";
 import Slider from "react-slick";
 import Peru from "../../assets/outdoors-peru.jpg";
 import USA from "../../assets/outdoors-usa.jpg";
 import Canada from "../../assets/outdoors-canada.jpg";
-import SliderArrow from "../SliderArrow";
+import SliderArrow from "./SliderArrow";
 
 const slideData = [
   {
@@ -39,53 +39,58 @@ const OutdoorsEdition: FC = () => {
     setCurrentIndex(newIndex);
   };
 
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 3000,
-    arrows: true,
-    nextArrow: (
-      <SliderArrow
-        next={true}
-        onClick={() => {
-          sliderRef.current?.slickNext();
-        }}
-      />
-    ),
-    prevArrow: (
-      <SliderArrow
-        next={false}
-        onClick={() => {
-          sliderRef.current?.slickPrev();
-        }}
-      />
-    ),
-    beforeChange: handleBeforeChange,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+  const settings = useMemo(
+    () => ({
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: true,
+      nextArrow: (
+        <SliderArrow
+          next={true}
+          onClick={() => {
+            sliderRef.current?.slickNext();
+          }}
+        />
+      ),
+      prevArrow: (
+        <SliderArrow
+          next={false}
+          onClick={() => {
+            sliderRef.current?.slickPrev();
+          }}
+        />
+      ),
+      beforeChange: handleBeforeChange,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
         },
-      },
-    ],
-  };
+      ],
+    }),
+    []
+  );
 
   return (
     <section className="relative lg:grid lg:grid-cols-[270px,1fr] lg:pt-0.5 lg:px-0 px-5 md:px-16">
       <div className="flex flex-col items-end mt-20 mb-12 text-right lg:mt-28">
-        <h2 className="mb-8 text-3xl font-bold w-min">Featured Spots</h2>
+        <h2 className="mb-8 text-2xl font-bold lg:text-3xl w-min">
+          Featured Spots
+        </h2>
         <p className="w-48 font-semibold mb-14 lg:mb-28 md:mb-16">
           Some of featured spot that you might want visit before you die
         </p>
@@ -113,10 +118,10 @@ const OutdoorsEdition: FC = () => {
           <Slider ref={sliderRef} {...settings}>
             {slideDataMuteted.map((slide, index) => (
               <article
-                key={index}
+                key={slide.title}
                 className="flex mb-12 text-center md:pr-16 lg:text-start"
               >
-                <div className="mx-auto mb-12 text-center md:w-2/3 lg:w-full">
+                <div className="mx-auto mb-12 text-center cursor-pointer md:w-2/3 lg:w-full">
                   <img
                     src={slide.image}
                     alt={`Slide ${index + 1}, ${slide.title}`}
@@ -132,7 +137,7 @@ const OutdoorsEdition: FC = () => {
                 <p className="mb-12 text-justify text-gray-300 lg:text-start">
                   {slide.description}
                 </p>
-                <button className="font-semibold text-yellow-300 transition-colors duration-300 justify-self-start hover:text-yellow-400 active:text-yellow-500">
+                <button className="font-semibold text-yellow-300 transition-colors duration-300 ease-in-out justify-self-start hover:text-yellow-400 active:text-yellow-500">
                   read more
                 </button>
               </article>

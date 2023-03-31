@@ -19,7 +19,7 @@ const Header: FC = () => {
           <div className="w-1/3 py-3 bg-yellow-300 md:p-6 md:w-72 md:pl-12 lg:w-96">
             <a
               href="/"
-              className="px-3 py-2 text-2xl font-bold transition-colors duration-300 text-slate-700 hover:text-zinc-900"
+              className="px-3 py-2 text-2xl font-bold transition-colors duration-300 ease-in-out text-slate-700 hover:text-zinc-950"
             >
               trppd_
             </a>

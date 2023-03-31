@@ -44,7 +44,7 @@ const MountainCard: FC<Props> = ({ title, country, isLast, img }) => {
         <BtnReadMore />
       </div>
 
-      <div className="self-center order-2 w-full mb-10 justify-self-center md:w-1/2 lg:w-96 lg:mb-0">
+      <div className="self-center order-2 w-full mb-10 cursor-pointer justify-self-center md:w-1/2 lg:w-96 lg:mb-0">
         <img
           src={img}
           alt={"Image of " + title}
