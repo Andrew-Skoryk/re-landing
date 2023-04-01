@@ -1,8 +1,8 @@
 import { FC } from "react";
 import MountainCard from "./MountainCard";
-import South from "../../assets/mountain-1.jpg";
-import North from "../../assets/mountain-2.jpg";
-import East from "../../assets/mountain-3.jpg";
+import South from "../../assets/mountain-1.webp";
+import North from "../../assets/mountain-2.webp";
+import East from "../../assets/mountain-3.webp";
 
 const MountainCollectionsContent = [
   { title: "Southern Mountain", country: "South", img: South },

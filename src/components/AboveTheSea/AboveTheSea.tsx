@@ -1,6 +1,6 @@
 import { FC } from "react";
 import BtnReadMore from "../BtnReadMore";
-import AboutTHeSea from "../../assets/Above-the-sea.jpg";
+import AboutTHeSea from "../../assets/Above-the-sea.webp";
 
 const AboveTheSea: FC = () => {
   return (
@@ -9,6 +9,7 @@ const AboveTheSea: FC = () => {
         <img
           src={AboutTHeSea}
           alt="Above the Sea"
+          loading="lazy"
           className="object-cover w-full h-auto aspect-square"
         />
       </div>

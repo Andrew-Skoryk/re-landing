@@ -1,8 +1,8 @@
 import { FC, useMemo, useRef, useState } from "react";
 import Slider from "react-slick";
-import Peru from "../../assets/outdoors-peru.jpg";
-import USA from "../../assets/outdoors-usa.jpg";
-import Canada from "../../assets/outdoors-canada.jpg";
+import Peru from "../../assets/outdoors-peru.webp";
+import USA from "../../assets/outdoors-usa.webp";
+import Canada from "../../assets/outdoors-canada.webp";
 import SliderArrow from "./SliderArrow";
 
 const slideData = [
@@ -126,6 +126,7 @@ const OutdoorsEdition: FC = () => {
                   <img
                     src={slide.image}
                     alt={`Slide ${index + 1}, ${slide.title}`}
+                    loading="lazy"
                     className={
                       "object-cover w-full h-auto aspect-square m-auto "
                     }

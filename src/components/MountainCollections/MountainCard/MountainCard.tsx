@@ -48,6 +48,7 @@ const MountainCard: FC<Props> = ({ title, country, isLast, img }) => {
         <img
           src={img}
           alt={"Image of " + title}
+          loading="lazy"
           className="self-center object-cover w-full h-auto aspect-square"
         />
       </div>

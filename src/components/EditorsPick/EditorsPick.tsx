@@ -1,10 +1,10 @@
 import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Slider from "react-slick";
-import Bridge from "../../assets/editors-pick-bridge.jpg";
-import Antelope from "../../assets/editors-pick-canyon.jpg";
-import Ashinoko from "../../assets/editors-pick-lake.jpg";
-import Flatiron from "../../assets/editors-pick-flatiron.jpg";
-import Sedona from "../../assets/editors-pick-sedona.jpg";
+import Bridge from "../../assets/editors-pick-bridge.webp";
+import Antelope from "../../assets/editors-pick-canyon.webp";
+import Ashinoko from "../../assets/editors-pick-lake.webp";
+import Flatiron from "../../assets/editors-pick-flatiron.webp";
+import Sedona from "../../assets/editors-pick-sedona.webp";
 import MobileSlider from "./MobileSlider/MobileSlider";
 import DesktopSlider from "./DesktopSlider/DesktopSlider";
 

@@ -21,6 +21,7 @@ const SlideArticle: FC<Props> = ({
       <img
         src={image}
         alt={title}
+        loading="lazy"
         className={`self-center h-auto w-full object-cover aspect-square ${customClass}`}
       />
 
