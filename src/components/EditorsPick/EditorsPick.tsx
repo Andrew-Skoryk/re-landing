@@ -1,4 +1,4 @@
-import { FC, useMemo, useRef, useState } from "react";
+import { FC, useCallback, useMemo, useRef, useState } from "react";
 import Slider from "react-slick";
 import SliderArrow from "../EditorsPick/SliderArrow";
 import Bridge from "../../assets/editors-pick-bridge.jpg";
@@ -25,7 +25,7 @@ const slideData = [
   },
   {
     image: Bridge,
-    title: "Golden Gate Bridge",
+    title: "Golden Gate",
     country: "USA",
     description:
       "Molestiae qui necessitatibus magnam quidem amet, ipsum dolor sit amet.",
@@ -50,13 +50,19 @@ const EditorsPick: FC = () => {
   const [sortOrder, setSortOrder] = useState("default");
   const sliderRef = useRef<Slider | null>(null);
 
-  const handleBeforeChange = (_prevIndex: number, newIndex: number) => {
-    setCurrentIndex(newIndex);
-  };
+  const handleBeforeChange = useCallback(
+    (_prevIndex: number, newIndex: number) => {
+      setCurrentIndex(newIndex);
+    },
+    [setCurrentIndex]
+  );
 
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortOrder(event.target.value);
-  };
+  const handleSortChange = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSortOrder(event.target.value);
+    },
+    [setSortOrder]
+  );
 
   const sortedSlideData = useMemo(() => {
     switch (sortOrder) {
@@ -130,7 +136,7 @@ const EditorsPick: FC = () => {
             {currentIndex + 1} / {slideDataMuteted.length}
           </span>
 
-          <div className="relative lg:pr-8 after:absolute after:w-1/4 after:h-[2px] after:bg-zinc-500 after:top-3.5 after:rounded-full after:right-0">
+          <div className="relative lg:pr-8 after:absolute after:w-1/5 after:h-[2px] after:bg-zinc-500 after:top-3.5 after:rounded-full after:right-0">
             <select
               className="pl-3 outline-none appearance-none cursor-pointer lg:pl-8 bg-stone-800"
               value={sortOrder}
@@ -145,7 +151,7 @@ const EditorsPick: FC = () => {
               <option value="country">Country</option>
             </select>
 
-            <div className="absolute pointer-events-none top-1 right-12">
+            <div className="absolute pointer-events-none top-1 lg:right-12 right-6">
               <svg
                 className="w-4 h-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +166,7 @@ const EditorsPick: FC = () => {
         <Slider ref={sliderRef} {...settings}>
           {slideDataMuteted.map(slideGroup => (
             <div key={currentIndex} className="w-full">
-              <div className="grid grid-cols-3 grid-rows-[1fr_1fr_290px] gap-6 md:gap-8 xl:gap-12">
+              <div className="grid grid-cols-3 grid-rows-3 gap-6 md:gap-8 xl:gap-12">
                 <SlideArticle
                   editorsPickObject={slideGroup[0]}
                   gridPosition="col-start-1 col-end-3 row-start-1 row-end-3"
@@ -168,6 +174,7 @@ const EditorsPick: FC = () => {
                 <SlideArticle
                   editorsPickObject={slideGroup[1]}
                   gridPosition="col-start-3 col-end-4 row-start-1 row-end-2"
+                  customClass="object-bottom"
                 />
                 <SlideArticle
                   editorsPickObject={slideGroup[2]}
@@ -180,7 +187,7 @@ const EditorsPick: FC = () => {
                 <SlideArticle
                   editorsPickObject={slideGroup[4]}
                   gridPosition="col-start-2 col-end-4 row-start-3 row-end-4"
-                  customClass="object-contain max-h-[290px]"
+                  customClass="object-contain 2xl:max-h-[290px] xl:max-h-[275px] lg:max-h-[170px]"
                 />
               </div>
             </div>

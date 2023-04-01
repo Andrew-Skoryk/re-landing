@@ -15,7 +15,7 @@ const SlideArticle: FC<Props> = ({
 
   return (
     <article
-      className={`relative flex group flex-col cursor-pointer text-start ${gridPosition}`}
+      className={`relative flex group overflow-hidden flex-col cursor-pointer text-start ${gridPosition}`}
     >
       <img
         src={image}

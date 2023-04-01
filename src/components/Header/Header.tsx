@@ -54,7 +54,8 @@ const Header: FC = () => {
               {
                 hidden: !isMenuOpen,
                 block: isMenuOpen,
-                "grid grid-cols-2 grid-rows-2 gap-4 md:flex mx-12": isMenuOpen,
+                "grid grid-cols-2 grid-rows-2 gap-4 md:flex mx-12 md:mx-0":
+                  isMenuOpen,
               }
             )}
           >
