@@ -16,7 +16,7 @@ const Header: FC = () => {
       <div className="absolute bottom-0 right-0 z-20 w-full h-1/4 bg-gradienToBg" />
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative z-10 flex flex-col h-screen">
-        <div className="flex justify-between pr-2 lg:pr-20 md:pr-12">
+        <div className="flex justify-between pr-2 xl:pr-20 md:pr-12 lg:pr-6">
           <div className="w-1/3 py-3 bg-yellow-300 md:p-6 md:w-72 md:pl-12 lg:w-96">
             <a
               href="/"
@@ -42,6 +42,7 @@ const Header: FC = () => {
           <div className="absolute inset-0 opacity-50 bg-stone-950" />
 
           <button
+            tabIndex={-1}
             className="z-50 flex items-center self-start flex-grow pl-2 text-center md:hidden"
             onClick={toggleMenu}
           >
@@ -67,24 +68,24 @@ const Header: FC = () => {
             {}
           </ul>
         </nav>
+      </div>
 
-        <div className="absolute z-30 space-y-10 lg:top-1/5 md:left-1/3 md:top-1/3 top-1/3 left-3">
-          <h1 className="text-6xl font-bold tracking-wide">
-            The Walchen
-            <br />
-            Lake
-          </h1>
+      <div className="absolute z-40 space-y-10 lg:top-1/5 md:left-1/3 md:top-1/3 top-1/3 left-3 2xl:left-1/4">
+        <h1 className="text-6xl font-bold tracking-wide">
+          The Walchen
+          <br />
+          Lake
+        </h1>
 
-          <p className="text-sm font-semibold md:text-base">
-            One of the deepest and largest alpine lakes in Germany
-            <br />
-            and one the best outdoors place
-            <br />
-            that you never imagine before.
-          </p>
+        <p className="text-sm font-semibold md:text-base">
+          One of the deepest and largest alpine lakes in Germany
+          <br />
+          and one the best outdoors place
+          <br />
+          that you never imagine before.
+        </p>
 
-          <BtnReadMore />
-        </div>
+        <BtnReadMore />
       </div>
     </header>
   );

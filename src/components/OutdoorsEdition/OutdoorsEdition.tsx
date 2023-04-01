@@ -118,6 +118,7 @@ const OutdoorsEdition: FC = () => {
           <Slider ref={sliderRef} {...settings}>
             {slideDataMuteted.map((slide, index) => (
               <article
+                tabIndex={-1}
                 key={slide.title}
                 className="flex mb-12 text-center md:pr-16 lg:text-start"
               >
