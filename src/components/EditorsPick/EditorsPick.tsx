@@ -1,12 +1,12 @@
-import { FC, useCallback, useMemo, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Slider from "react-slick";
-import SliderArrow from "../EditorsPick/SliderArrow";
 import Bridge from "../../assets/editors-pick-bridge.jpg";
 import Antelope from "../../assets/editors-pick-canyon.jpg";
 import Ashinoko from "../../assets/editors-pick-lake.jpg";
 import Flatiron from "../../assets/editors-pick-flatiron.jpg";
 import Sedona from "../../assets/editors-pick-sedona.jpg";
-import SlideArticle from "./SlideArticle";
+import MobileSlider from "./MobileSlider/MobileSlider";
+import DesktopSlider from "./DesktopSlider/DesktopSlider";
 
 const slideData = [
   {
@@ -47,8 +47,24 @@ const slideData = [
 
 const EditorsPick: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesNumber, setSlidesNumber] = useState(3);
   const [sortOrder, setSortOrder] = useState("default");
   const sliderRef = useRef<Slider | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleBeforeChange = useCallback(
     (_prevIndex: number, newIndex: number) => {
@@ -82,36 +98,6 @@ const EditorsPick: FC = () => {
     [sortedSlideData]
   );
 
-  const settings = useMemo(
-    () => ({
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 3000,
-      arrows: true,
-      nextArrow: (
-        <SliderArrow
-          next={true}
-          onClick={() => {
-            sliderRef.current?.slickNext();
-          }}
-        />
-      ),
-      prevArrow: (
-        <SliderArrow
-          next={false}
-          onClick={() => {
-            sliderRef.current?.slickPrev();
-          }}
-        />
-      ),
-      beforeChange: handleBeforeChange,
-    }),
-    []
-  );
-
   return (
     <section className="relative lg:grid lg:grid-cols-[270px,1fr] lg:px-0 px-5 md:px-16">
       <div className="flex flex-col items-start mt-2 mb-12 lg:text-right lg:mt-4 lg:items-end">
@@ -133,12 +119,12 @@ const EditorsPick: FC = () => {
           <div className="relative after:absolute after:h-[2px] after:bg-zinc-500 after:inset-x-0-0 after:top-3.5 pb-14 after:rounded-full after:w-full flex-grow" />
 
           <span className="lg:pl-8 pl-3 relative after:absolute after:w-1/4 after:h-[2px] after:bg-zinc-500 after:top-3.5 after:rounded-full lg:pr-16 after:right-0 pr-8">
-            {currentIndex + 1} / {slideDataMuteted.length}
+            {currentIndex + 1} / {slidesNumber}
           </span>
 
-          <div className="relative lg:pr-8 after:absolute after:w-1/5 after:h-[2px] after:bg-zinc-500 after:top-3.5 after:rounded-full after:right-0">
+          <div className="relative lg:pr-10 after:absolute after:w-1/4 after:h-[2px] after:bg-zinc-500 after:top-3.5 after:rounded-full after:right-0 pr-8">
             <select
-              className="pl-3 outline-none appearance-none cursor-pointer lg:pl-8 bg-stone-800"
+              className="px-3 tracking-tight outline-none appearance-none cursor-pointer lg:px-8 bg-stone-800"
               value={sortOrder}
               onChange={handleSortChange}
               placeholder="sort by"
@@ -147,11 +133,11 @@ const EditorsPick: FC = () => {
                 sort by
               </option>
               <option value="">Default</option>
-              <option value="alphabetical">Alphabetical</option>
+              <option value="alphabetical">A to Z</option>
               <option value="country">Country</option>
             </select>
 
-            <div className="absolute pointer-events-none top-1 lg:right-12 right-6">
+            <div className="absolute pointer-events-none top-1 lg:right-12 right-7">
               <svg
                 className="w-4 h-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -163,36 +149,21 @@ const EditorsPick: FC = () => {
           </div>
         </div>
 
-        <Slider ref={sliderRef} {...settings}>
-          {slideDataMuteted.map(slideGroup => (
-            <div key={currentIndex} className="w-full">
-              <div className="grid grid-cols-3 grid-rows-3 gap-6 md:gap-8 xl:gap-12">
-                <SlideArticle
-                  editorsPickObject={slideGroup[0]}
-                  gridPosition="col-start-1 col-end-3 row-start-1 row-end-3"
-                />
-                <SlideArticle
-                  editorsPickObject={slideGroup[1]}
-                  gridPosition="col-start-3 col-end-4 row-start-1 row-end-2"
-                  customClass="object-bottom"
-                />
-                <SlideArticle
-                  editorsPickObject={slideGroup[2]}
-                  gridPosition="col-start-3 col-end-4 row-start-2 row-end-3"
-                />
-                <SlideArticle
-                  editorsPickObject={slideGroup[3]}
-                  gridPosition="col-start-1 col-end-2 row-start-3 row-end-4"
-                />
-                <SlideArticle
-                  editorsPickObject={slideGroup[4]}
-                  gridPosition="col-start-2 col-end-4 row-start-3 row-end-4"
-                  customClass="object-contain 2xl:max-h-[290px] xl:max-h-[275px] lg:max-h-[170px]"
-                />
-              </div>
-            </div>
-          ))}
-        </Slider>
+        {isDesktop ? (
+          <DesktopSlider
+            slideDataMuteted={slideDataMuteted}
+            handleBeforeChange={handleBeforeChange}
+            sliderRef={sliderRef}
+            setSlidesNumber={setSlidesNumber}
+          />
+        ) : (
+          <MobileSlider
+            slideDataMuteted={slideDataMuteted}
+            handleBeforeChange={handleBeforeChange}
+            sliderRef={sliderRef}
+            setSlidesNumber={setSlidesNumber}
+          />
+        )}
       </div>
     </section>
   );
